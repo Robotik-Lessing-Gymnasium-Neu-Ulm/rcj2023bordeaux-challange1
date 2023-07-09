@@ -2,6 +2,7 @@ package main
 
 import (
 	"rcj2023bordeau-challange1/src/teensy"
+	"rcj2023bordeau-challange1/src/vision"
 )
 
 func main() {
@@ -10,5 +11,5 @@ func main() {
 	teensy.SendInt(69, PORT)
 
 	//gui.InitGui()
-	//vision.Init()
+	vision.Init()
 }
