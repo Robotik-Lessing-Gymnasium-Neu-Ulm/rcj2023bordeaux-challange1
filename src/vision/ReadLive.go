@@ -7,12 +7,16 @@ import (
 )
 
 func Init() {
-	// webcam, err := gocv.VideoCaptureDevice(0)
-	webcam, err := gocv.VideoCaptureFile("ch.mp4")
+	webcam, err := gocv.VideoCaptureDevice(0)
+	//webcam, err := gocv.VideoCaptureFile("ch.mp4")
 	if err != nil {
 		log.SetFlags(log.Lshortfile | log.LstdFlags)
 		log.Fatalf("Error reading webcam: %s\n", err)
 	}
+
+	webcam.Set(gocv.VideoCaptureAutoFocus, 30)
+	webcam.Set(gocv.VideoCaptureFrameHeight, 2304/4)
+	webcam.Set(gocv.VideoCaptureFrameWidth, 4096/4)
 
 	window := gocv.NewWindow("GPS Tracker")
 
@@ -42,7 +46,7 @@ func Init() {
 
 		window.IMShow(frame)
 		if window.WaitKey(1) >= 0 {
-		    break
+			break
 		}
 	}
 }

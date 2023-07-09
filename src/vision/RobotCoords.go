@@ -13,5 +13,5 @@ func CordCalculator(corners [][]gocv.Point2f, ids []int) {
 		markercorners := corners[4]
 		fmt.Println(markercorners[0].X, " :: ", markercorners[0].Y)
 	}
-
+	
 }
