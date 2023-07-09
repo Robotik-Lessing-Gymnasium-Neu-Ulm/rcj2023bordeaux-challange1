@@ -8,6 +8,7 @@ import (
 )
 
 func Init() {
+	// webcam, err := gocv.VideoCaptureDevice(0)
 	webcam, err := gocv.VideoCaptureFile("ch.mp4")
 	if err != nil {
 		log.SetFlags(log.Lshortfile | log.LstdFlags)

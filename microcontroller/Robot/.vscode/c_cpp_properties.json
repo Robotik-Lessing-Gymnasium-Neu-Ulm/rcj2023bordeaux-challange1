@@ -12,8 +12,14 @@
             ],
             "intelliSenseMode": "gcc-x64",
             "includePath": [
-                "C:\\Users\\Elias Braun\\AppData\\Local\\Temp\\arduino\\sketches\\206F8EC5FC5E306C2DEC4E7BBB92F7E3\\pch",
+                "C:\\Users\\Elias Braun\\Documents\\GIT\\rcj2023bordeaux-challange1\\microcontroller\\ArduinoOutput\\pch",
                 "C:\\Users\\Elias Braun\\AppData\\Local\\Arduino15\\packages\\teensy\\hardware\\avr\\1.58.1\\cores\\teensy4",
+                "C:\\Users\\Elias Braun\\Documents\\Arduino\\libraries\\Adafruit_BNO055",
+                "C:\\Users\\Elias Braun\\Documents\\Arduino\\libraries\\Adafruit_BusIO",
+                "C:\\Users\\Elias Braun\\AppData\\Local\\Arduino15\\packages\\teensy\\hardware\\avr\\1.58.1\\libraries\\Wire",
+                "C:\\Users\\Elias Braun\\Documents\\Arduino\\libraries\\Adafruit_Unified_Sensor",
+                "C:\\Users\\Elias Braun\\AppData\\Local\\Arduino15\\packages\\teensy\\hardware\\avr\\1.58.1\\libraries\\EEPROM",
+                "C:\\Users\\Elias Braun\\AppData\\Local\\Arduino15\\packages\\teensy\\hardware\\avr\\1.58.1\\libraries\\SPI",
                 "c:\\users\\elias braun\\appdata\\local\\arduino15\\packages\\teensy\\tools\\teensy-compile\\11.3.1\\arm\\arm-none-eabi\\include\\c++\\11.3.1",
                 "c:\\users\\elias braun\\appdata\\local\\arduino15\\packages\\teensy\\tools\\teensy-compile\\11.3.1\\arm\\arm-none-eabi\\include\\c++\\11.3.1\\arm-none-eabi",
                 "c:\\users\\elias braun\\appdata\\local\\arduino15\\packages\\teensy\\tools\\teensy-compile\\11.3.1\\arm\\arm-none-eabi\\include\\c++\\11.3.1\\backward",
@@ -22,7 +28,7 @@
                 "c:\\users\\elias braun\\appdata\\local\\arduino15\\packages\\teensy\\tools\\teensy-compile\\11.3.1\\arm\\arm-none-eabi\\include"
             ],
             "forcedInclude": [
-                "C:\\Users\\Elias Braun\\AppData\\Local\\Temp\\arduino\\sketches\\206F8EC5FC5E306C2DEC4E7BBB92F7E3\\pch\\Arduino.h"
+                "C:\\Users\\Elias Braun\\Documents\\GIT\\rcj2023bordeaux-challange1\\microcontroller\\ArduinoOutput\\pch\\Arduino.h"
             ],
             "cStandard": "c11",
             "cppStandard": "c++14",
@@ -30,7 +36,7 @@
                 "__IMXRT1062__",
                 "TEENSYDUINO=158",
                 "ARDUINO=10607",
-                "ARDUINO_TEENSY40",
+                "ARDUINO_TEENSY41",
                 "F_CPU=600000000",
                 "USB_SERIAL",
                 "LAYOUT_US_ENGLISH",

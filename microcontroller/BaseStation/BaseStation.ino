@@ -1,3 +1,5 @@
+#include <Wire.h>
+
 int rx_byte;
 
 void setup() {
@@ -21,5 +23,4 @@ void sendBLTData(int& number) {
   if (Serial.availableForWrite()) {
     Serial.write(number);
   }
-  
 }
