@@ -10,6 +10,5 @@ func main() {
 	PORT := teensy.Communication("COM5")
 	teensy.SendInt(69, PORT)
 
-	//gui.InitGui()
 	vision.Init()
 }

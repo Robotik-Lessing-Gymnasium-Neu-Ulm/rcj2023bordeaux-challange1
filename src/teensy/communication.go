@@ -42,12 +42,12 @@ func Communication(port string) serial.Port {
 }
 
 func SendInt(number int, port serial.Port) {
-	n, err := port.Write(IntToByteArray(int64(number)))
+	_, err := port.Write(IntToByteArray(int64(number)))
 	if err != nil {
 		log.SetFlags(log.Lshortfile | log.LstdFlags)
 		log.Fatalf("Error sending data to teensy: %s\n", err)
 	}
-	fmt.Printf("Send succesfully: %d\n", n)
+	fmt.Printf("Send succesfully: %d\n", number)
 }
 
 func IntToByteArray(num int64) []byte {

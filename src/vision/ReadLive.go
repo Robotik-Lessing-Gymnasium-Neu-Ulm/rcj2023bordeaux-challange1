@@ -1,7 +1,6 @@
 package vision
 
 import (
-	"fmt"
 	"log"
 
 	"gocv.io/x/gocv"
@@ -35,14 +34,15 @@ func Init() {
 		}
 
 		corners, ids, _ := detector.DetectMarkers(frame)
-		fmt.Println(len(ids))
 		if len(ids) > 0 {
 			gocv.ArucoDrawDetectedMarkers(frame, corners, ids, gocv.NewScalar(20, 100, 200, 50))
 		}
 
+		CordCalculator(corners, ids)
+
 		window.IMShow(frame)
 		if window.WaitKey(1) >= 0 {
-			break
+		    break
 		}
 	}
 }
