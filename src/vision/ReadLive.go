@@ -1,1 +1,5 @@
 package vision
+
+func Init() {
+	
+}

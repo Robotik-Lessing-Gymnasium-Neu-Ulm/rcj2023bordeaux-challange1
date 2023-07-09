@@ -3,6 +3,7 @@ package teensy
 import (
 	"fmt"
 	"log"
+	"unsafe"
 
 	"go.bug.st/serial"
 )
@@ -38,4 +39,23 @@ func Communication(port string) serial.Port {
 	fmt.Println("Connection successfull")
 
 	return PORT
+}
+
+func SendInt(number int, port serial.Port) {
+	n, err := port.Write(IntToByteArray(int64(number)))
+	if err != nil {
+		log.SetFlags(log.Lshortfile | log.LstdFlags)
+		log.Fatalf("Error sending data to teensy: %s\n", err)
+	}
+	fmt.Printf("Send succesfully: %d\n", n)
+}
+
+func IntToByteArray(num int64) []byte {
+	size := int(unsafe.Sizeof(num))
+	arr := make([]byte, size)
+	for i := 0; i < size; i++ {
+		byt := *(*uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&num)) + uintptr(i)))
+		arr[size-1-i] = byt
+	}
+	return arr
 }

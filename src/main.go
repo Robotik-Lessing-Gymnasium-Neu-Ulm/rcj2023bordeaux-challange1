@@ -1,13 +1,14 @@
 package main
 
 import (
-	"rcj2023bordeau-challange1/src/gui"
 	"rcj2023bordeau-challange1/src/teensy"
 )
 
 func main() {
 	teensy.GetAllPorts()
-	_ = teensy.Communication("COM5")
+	PORT := teensy.Communication("COM5")
+	teensy.SendInt(69, PORT)
 
-	gui.InitGui()
+	//gui.InitGui()
+	//vision.Init()
 }
