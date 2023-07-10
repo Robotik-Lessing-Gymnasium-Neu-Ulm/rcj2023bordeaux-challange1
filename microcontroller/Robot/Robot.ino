@@ -14,26 +14,26 @@ Adafruit_BNO055 gyro = Adafruit_BNO055(55, 0x28);
 
 #define gyroButton 31
 
-#define M1_FW 0 // richtig
-#define M1_RW 2
-#define M1_PWM 1
+#define M1_FW 28 // richtig
+#define M1_RW 27
+#define M1_PWM 26
 
-#define M2_FW 3 // richtig
-#define M2_RW 5
-#define M2_PWM 4
+#define M2_FW 25 // richtig
+#define M2_RW 24
+#define M2_PWM 12
 
-#define M3_FW 6 // richtig!
-#define M3_RW 8
-#define M3_PWM 7
+#define M3_FW 11 // richtig!S
+#define M3_RW 10
+#define M3_PWM 9
 
-#define M4_FW 9 // richtig!
-#define M4_RW 11
-#define M4_PWM 10
+#define M4_FW 8 // richtig!
+#define M4_RW 7
+#define M4_PWM 6
 
-#define VR 1 // m1
-#define VL 2 // m2
+#define VR 4 // m1
+#define VL 1 // m2
 #define HR 3 // m3
-#define HL 4 // m4
+#define HL 2 // m4
 
 // Gyro variables
 long alteZeit;
@@ -53,7 +53,7 @@ int Drivedir;
 void setup()
 {
     Serial.begin(115200);
-    Serial5.begin(115200);
+    Serial1.begin(115200);
 
     // Linker Motor Pin Festlegung
     pinMode(M1_FW, OUTPUT);
@@ -77,9 +77,9 @@ void loop()
 {
     compass();
     Drivedir == bluetooth();
-    if (!(Drivedir < 0))
+    if (!(Drivedir >= 200))
     {
-        Drivedir * 2;
-        motor(Drivedir, 50);
+        int redone = Drivedir * 2;
+        motor(redone, 50);
     }
 }

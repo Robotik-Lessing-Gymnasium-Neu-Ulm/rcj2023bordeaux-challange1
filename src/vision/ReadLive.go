@@ -20,7 +20,7 @@ func Init() {
 
 	window := gocv.NewWindow("GPS Tracker")
 
-	dictionary := gocv.GetPredefinedDictionary(gocv.ArucoDict4x4_100)
+	dictionary := gocv.GetPredefinedDictionary(gocv.ArucoDict4x4_1000)
 
 	parameters := gocv.NewArucoDetectorParameters()
 	parameters.SetCornerRefinementMethod(1)
@@ -42,7 +42,20 @@ func Init() {
 			gocv.ArucoDrawDetectedMarkers(frame, corners, ids, gocv.NewScalar(20, 100, 200, 50))
 		}
 
+		/*v1 := gocv.NewPoint2fVectorFromPoints()
+		goodFrame := gocv.GetPerspectiveTransform2f()
+		*/
+
 		CordCalculator(corners, ids)
+		/*if len(ids) == 5 {
+			//from middle point
+			dy := corners[2][0].X - 434
+			dx := corners[2][0].Y - 332
+
+			fmt.Printf("X: %f -- Y: %f\n", dx, dy)
+		} else {
+			fmt.Println("Missing Points")
+		}*/
 
 		window.IMShow(frame)
 		if window.WaitKey(1) >= 0 {

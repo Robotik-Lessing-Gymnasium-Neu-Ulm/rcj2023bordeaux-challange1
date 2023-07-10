@@ -5,6 +5,7 @@ int rx_byte;
 void setup() {
   // initialize serial:
   Serial.begin(115200);
+  Serial1.begin(115200);
 }
 
 void loop() {
@@ -20,7 +21,7 @@ void loop() {
 }
 
 void sendBLTData(int& number) {
-  if (Serial.availableForWrite()) {
-    Serial.write(number);
+  if (Serial1.availableForWrite()) {
+    Serial1.write(number);
   }
 }

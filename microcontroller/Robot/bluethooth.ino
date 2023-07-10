@@ -1,7 +1,7 @@
 int bluetooth() {
-    if (Serial5.available()) {
+    if (Serial1.available()) {
         int angle;
-        angle = Serial5.read();
+        angle = Serial1.read();
         return angle;
     }    
 }
